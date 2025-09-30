@@ -15,45 +15,7 @@
 
     <!-- Python code -->
     <py-script>
-from js import document, window
-
-canvas = document.getElementById("gameCanvas")
-ctx = canvas.getContext("2d")
-
-# square position
-x, y = 200, 200
-size = 30
-speed = 5
-
-# track pressed keys
-keys = {"ArrowUp": False, "ArrowDown": False, "ArrowLeft": False, "ArrowRight": False}
-
-def key_down(event):
-    if event.key in keys:
-        keys[event.key] = True
-
-def key_up(event):
-    if event.key in keys:
-        keys[event.key] = False
-
-document.addEventListener("keydown", key_down)
-document.addEventListener("keyup", key_up)
-
-def game_loop(*args):
-    global x, y
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-    # move square based on keys
-    if keys["ArrowUp"]: y -= speed
-    if keys["ArrowDown"]: y += speed
-    if keys["ArrowLeft"]: x -= speed
-    if keys["ArrowRight"]: x += speed
-
-    # draw square
-    ctx.fillStyle = "blue"
-    ctx.fillRect(x, y, size, size)
-
-    window.requestAnimationFrame(game_loop)
+print('hello world')
 
 # start the loop
 game_loop()
